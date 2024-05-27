@@ -1,11 +1,24 @@
 <script>
 import { ref } from 'vue'
+import store from '../carte.js'
+
+export default {
+    name : "CardsList",
+    data() {
+        return {
+            store
+        }
+    }
+}
 </script>
 
 <template>
-    <div class="d-flex px-4 py-4 w-100">
-        <div>
+    <div class="d-flex px-4 py-4 w-100 bg-white">
+        <div class="bg-dark text-light w-75 m-auto p-3">
             <h3>Found 39 cards</h3>
+            <div>
+                <div class="cardSingola" v-for="cardSingola in "></div>
+            </div>
         </div>
     </div>
 
