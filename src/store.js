@@ -170,3 +170,7 @@ let carte = [
             ],
     },
 ];
+
+export const store = reactive({
+    carte : carte
+})

@@ -17,7 +17,11 @@ export default {
         <div class="bg-dark text-light w-75 m-auto p-3">
             <h3>Found 39 cards</h3>
             <div>
-                <div class="cardSingola" v-for="cardSingola in carte"></div>
+                <div class="cardSingola" v-for="cardSingola in carte">
+                <img src="" alt="">
+                <h4>{{ cardSingola.name }}</h4>
+                <p>{{ cardSingola.archetype }}</p>
+                </div>
             </div>
         </div>
     </div>
