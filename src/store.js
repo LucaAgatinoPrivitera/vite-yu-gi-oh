@@ -1,3 +1,5 @@
+import { reactive } from 'vue'
+
 let carte = [
     {
         name: "\"A\" Cell Breeding Device",
@@ -172,5 +174,5 @@ let carte = [
 ];
 
 export const store = reactive({
-    carte : carte
-})
+    carte: carte
+});
