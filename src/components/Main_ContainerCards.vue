@@ -1,6 +1,6 @@
 <script>
 import { ref } from 'vue'
-import store from '../carte.js'
+import store from '../store.js'
 
 export default {
     name : "CardsList",
