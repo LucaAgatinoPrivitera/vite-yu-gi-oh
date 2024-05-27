@@ -1,6 +1,6 @@
 <script>
-import { ref } from 'vue'
-import store from '../store.js'
+import { ref } from 'vue';
+import store from '../store.js';
 
 export default {
     name : "CardsList",
@@ -17,7 +17,7 @@ export default {
         <div class="bg-dark text-light w-75 m-auto p-3">
             <h3>Found 39 cards</h3>
             <div>
-                <div class="cardSingola" v-for="cardSingola in "></div>
+                <div class="cardSingola" v-for="cardSingola in carte"></div>
             </div>
         </div>
     </div>
