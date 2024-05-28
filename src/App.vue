@@ -33,10 +33,13 @@ export default {
     },
     getTypes() {
       // endpoint dei tipi
-      axios.get("https://db.ygoprodeck.com/api/v7/archetypes.php").then(risultato =>{
+      axios.get("https://db.ygoprodeck.com/api/v7/archetypes.php").then(risultato => {
         this.store.typeAxios = risultato.data;
         console.log(this.store.typeAxios[0])
       });
+    },
+    onChange(change){
+      this.store.carteAxios = change.data;
     }
   },
   created() {
@@ -51,6 +54,10 @@ export default {
 
 <template>
   <Header></Header>
+  <select class="form-select bg-light w-75 m-auto" aria-label="Default select example" v-model="searchString" @change="onChange(searchString)">
+    <option selected>Open this select menu</option>
+    <option v-for="archetipo in this.store.typeAxios" value="searchString">{{ archetipo.archetype_name }}</option>
+  </select>
   <Main></Main>
   <div class="w-75 m-auto px-3">
     <input type="text" v-model="searchString" placeholder="Cerca la carta">

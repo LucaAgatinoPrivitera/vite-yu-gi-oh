@@ -10,10 +10,10 @@ export default {
     Main_ContainerCards
   },
   data() {
-        return {
-            store
-        }
+    return {
+      store
     }
+  }
 }
 </script>
 
@@ -21,12 +21,13 @@ export default {
   <div class="d-flex px-4 py-4 w-100">
     <div class="w-75 m-auto">
       <div class="dropdown">
-        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <!--<button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Seleziona type
         </button>
-        <ul class="dropdown-menu">
-          <li v-for="archetipo in this.store.carteAxios"><a class="dropdown-item" href="#">{{archetipo.archetype}}</a></li>
-        </ul>
+         <ul class="dropdown-menu">
+          <li v-for="archetipo in this.store.typeAxios"><a class="dropdown-item"
+              href="#">{{ archetipo.archetype_name }}</a></li>
+        </ul> -->
       </div>
     </div>
   </div>
