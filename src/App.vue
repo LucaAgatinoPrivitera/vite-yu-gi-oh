@@ -16,6 +16,7 @@ export default {
       appTitle: "Rick 'n' Morty",
       store, //Da chiedere,l'ho preso dal codice di Luca di oggi, ma lo devo mettere? dopo provo a toglierlo e vedo se si rompe qualcosa.
       searchString: "",
+      searchType: "",
     }
   },
 
@@ -31,6 +32,12 @@ export default {
         console.log(this.store.carteAxios)
       });
     },
+    getName() {
+      axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + this.searchString).then(risultato => {
+        this.store.carteAxios = risultato.data.data;
+        // da chiedere, cosa fa nello specifico ma cerca il nome
+      });
+    },
     getTypes() {
       // endpoint dei tipi
       axios.get("https://db.ygoprodeck.com/api/v7/archetypes.php").then(risultato => {
@@ -38,9 +45,16 @@ export default {
         console.log(this.store.typeAxios[0])
       });
     },
-    onChange(change){
-      this.store.carteAxios = change.data;
-    }
+
+
+    onChangeInput() {
+      // endpoint dei tipi
+      axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=" + this.searchType).then(risultato => {
+        this.store.carteAxios = risultato.data.data;
+        console.log(this.store.typeAxios[0])
+      });
+    },
+
   },
   created() {
     this.getPersonaggi();
@@ -54,14 +68,16 @@ export default {
 
 <template>
   <Header></Header>
-  <select class="form-select bg-light w-75 m-auto" aria-label="Default select example" v-model="searchString" @change="onChange(searchString)">
-    <option selected>Open this select menu</option>
-    <option v-for="archetipo in this.store.typeAxios" value="searchString">{{ archetipo.archetype_name }}</option>
+  <select class="form-select bg-light w-75 m-auto" aria-label="Default select example" v-model="searchType"
+    @change="onChangeInput()">
+    <option selected disabled value>Open this select menu</option>
+    <option v-for="archetipo in this.store.typeAxios" :key="archetipo.archetype_name" :value="archetipo.archetype_name">
+      {{ archetipo.archetype_name }}</option>
   </select>
   <Main></Main>
   <div class="w-75 m-auto px-3">
     <input type="text" v-model="searchString" placeholder="Cerca la carta">
-    <button @click="getPersonaggi">Cerca</button>
+    <button @click="getName()">Cerca</button>
   </div>
 
 </template>
