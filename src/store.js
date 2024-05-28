@@ -173,6 +173,10 @@ let carte = [
     },
 ];
 
+let carteAxios = []
+
 export const store = reactive({
-    carte: carte
+    carte: carte,
+    carteAxios : carteAxios
 });
+
