@@ -32,9 +32,10 @@ export default {
       });
     },
     getTypes() {
+      // endpoint dei tipi
       axios.get("https://db.ygoprodeck.com/api/v7/archetypes.php").then(risultato =>{
         this.store.typeAxios = risultato.data;
-        console.log(this.store.typeAxios)
+        console.log(this.store.typeAxios[0])
       });
     }
   },

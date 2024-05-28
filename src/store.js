@@ -175,6 +175,7 @@ let carte = [
 
 let carteAxios = []
 
+// array deo tipi
 let typeAxios = []
 
 export const store = reactive({
