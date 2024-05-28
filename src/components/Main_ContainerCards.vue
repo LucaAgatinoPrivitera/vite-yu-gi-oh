@@ -40,7 +40,7 @@ export default {
                 <h3 class="text-light bg-primary p-3 mb-0 mt-4">Part 2</h3>
                 <h3 class="text-light bg-dark p-3 mb-0">Found 39 cards</h3>
                 <div class="d-flex flex-wrap justify-content-between m-0 p-0 bg-light">
-                    <div class="cardSingola mb-3" v-for="cardSingola, i in store.carte">
+                    <div class="cardSingola mb-3" v-for="cardSingola, i in store.carteAxios">
                         <img :src="cardSingola.card_images[0].image_url">
                         <h6 class="text-center">{{ cardSingola.name }}</h6>
                         <p class="text-center text-dark">{{ cardSingola.archetype }}</p>

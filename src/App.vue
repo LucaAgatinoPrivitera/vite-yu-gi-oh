@@ -24,10 +24,11 @@ export default {
     getPersonaggi() {
       console.log("cerca: ", this.searchString); //il this serve perché è messo nel data, in fondo è vue
 
-      axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=5&offset=0" + this.searchString).then(risultato => {
+      axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0" + this.searchString).then(risultato => {
         // console.log(risultato.data.results);
-        this.store.carteAxios = risultato.data.data.name;
-        console.log(risultato.data.data[0].name)
+        this.store.carteAxios = risultato.data.data;
+        // Mettendo il data mi becco tutto l'oggettone e quindi ha tutto dentro
+        console.log(this.store.carteAxios)
       });
     }
   },
