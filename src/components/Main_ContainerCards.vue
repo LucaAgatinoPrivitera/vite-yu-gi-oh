@@ -9,7 +9,15 @@ export default {
         return {
             store
         }
-    }
+    },
+    methods:{
+        
+    },
+    mounted(){
+
+}
+
+
 }
 </script>
 
