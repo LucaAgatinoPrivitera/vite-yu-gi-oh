@@ -175,11 +175,13 @@ let carte = [
 
 let carteAxios = []
 
+let typeAxios = []
+
 export const store = reactive({
     carte: carte
 });
 
 export const storeAxios = reactive({
-    carteAxios : carteAxios
+    carteAxios : carteAxios,
+    typeAxios : typeAxios
 });
-

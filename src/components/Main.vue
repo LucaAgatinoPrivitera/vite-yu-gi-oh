@@ -1,20 +1,33 @@
 <script>
 import { ref } from 'vue'
 import Main_ContainerCards from '../components/Main_ContainerCards.vue'
+import { store } from '../store.js';
+import axios from 'axios'
 
 
 export default {
   components: {
     Main_ContainerCards
   },
+  data() {
+        return {
+            store
+        }
+    }
 }
 </script>
 
 <template>
   <div class="d-flex px-4 py-4 w-100">
     <div class="w-75 m-auto">
-      <button class="btn btn-outline-secondary dropdown-toggle bg-white" type="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">Alien</button>
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Seleziona type
+        </button>
+        <ul class="dropdown-menu">
+          <li v-for="archetipo in this.store.carteAxios"><a class="dropdown-item" href="#">{{archetipo.archetype}}</a></li>
+        </ul>
+      </div>
     </div>
   </div>
   <Main_ContainerCards></Main_ContainerCards>

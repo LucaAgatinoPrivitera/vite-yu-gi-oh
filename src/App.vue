@@ -30,10 +30,17 @@ export default {
         // Mettendo il data mi becco tutto l'oggettone e quindi ha tutto dentro
         console.log(this.store.carteAxios)
       });
+    },
+    getTypes() {
+      axios.get("https://db.ygoprodeck.com/api/v7/archetypes.php").then(risultato =>{
+        this.store.typeAxios = risultato.data;
+        console.log(this.store.typeAxios)
+      });
     }
   },
   created() {
     this.getPersonaggi();
+    this.getTypes()
   },
   mounted() {
   }
