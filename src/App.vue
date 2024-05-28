@@ -26,7 +26,7 @@ export default {
 
       axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=2&offset=0" + this.searchString).then(risultato => {
         // console.log(risultato.data.results);
-        this.store.personaggi = risultato.data.results;
+        this.store.carteAxios = risultato.data.results;
       });
     }
   },
