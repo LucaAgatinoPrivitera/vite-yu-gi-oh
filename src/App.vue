@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       appTitle: "Rick 'n' Morty",
-      store, //Da chiedere,l'ho preso dal codice di Luca di oggi, ma lo devo mettere? dopo provo a toglierlo e vedo se si rompe qualcosa.
+      store, //Da chiedere, l'ho preso dal codice di Luca di oggi, ma lo devo mettere? dopo provo a toglierlo e vedo se si rompe qualcosa.
       searchString: "",
       searchType: "",
     }
@@ -72,6 +72,7 @@ export default {
     @change="onChangeInput()">
     <option selected disabled value>Open this select menu</option>
     <option v-for="archetipo in this.store.typeAxios" :key="archetipo.archetype_name" :value="archetipo.archetype_name">
+      <!-- Prima senza key e value non funzionava -->
       {{ archetipo.archetype_name }}</option>
   </select>
   <Main></Main>
